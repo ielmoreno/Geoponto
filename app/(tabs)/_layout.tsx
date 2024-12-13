@@ -1,7 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
-
+import AntDesign from '@expo/vector-icons/AntDesign';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
@@ -14,6 +15,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        tabBarActiveBackgroundColor: Colors[colorScheme ?? 'dark'].tabBackground,
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
@@ -36,8 +38,15 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Registrar',
+          tabBarIcon: ({ color, focused }) => <AntDesign name={focused ? "enviroment" : "enviromento"} size={28} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="coord"
+        options={{
+          title: 'Coordenadas',
+          tabBarIcon: ({ color, focused }) => <FontAwesome6 name="gears" size={24} color={color} />,
         }}
       />
     </Tabs>

@@ -5,7 +5,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function HomeScreen() {
+export default function NovaScreen() {
   return (
     <SafeAreaView>
       <ThemedView style={styles.titleContainer}>
@@ -17,7 +17,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    backgroundColor:'#008000',
+    backgroundColor:'#444',
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
